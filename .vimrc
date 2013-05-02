@@ -8,6 +8,12 @@ set nowrap              " we dont want any wrapping to happen
 set virtualedit=all     " TOTAL FREEDOM 4 my curZ0r
 syntax on               " Syntax highlighting
 
+" Set leader to comma, which is easier to reach
+let mapleader = ","
+
 " Run Pathogen
 execute pathogen#infect() 
+
+" Convenient keymap for NERDTree
+map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 
