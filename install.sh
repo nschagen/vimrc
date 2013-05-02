@@ -10,6 +10,8 @@ if [ -d ".git" ]; then
 	  mkdir ~/.vim
 	fi
 
+  git submodule update --init
+
 	cp -r * ~/.vim 2>/dev/null # Copy and Ignore complaints about being unable to copy parts of .git directories
 	cp .vimrc ~/.vimrc 
 else
