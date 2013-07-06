@@ -17,3 +17,5 @@ execute pathogen#infect()
 " Convenient keymap for NERDTree
 map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 
+" Always use MRU
+let g:ctrlp_cmd = 'CtrlPMRU'

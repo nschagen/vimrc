@@ -15,6 +15,7 @@ if [ -d ".git" ]; then
       echo "git submodule deinit bundle/$plugin"
       #TODO: remove it from .gitmodules!!!
       echo "git rm --cached bundle/$plugin"
+      echo "rmdir bundle/$plugin"
     else
       echo "Plugin $plugin does not exists. Skipping!"
     fi
