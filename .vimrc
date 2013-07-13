@@ -16,11 +16,10 @@ execute pathogen#infect()
 " Set leader to comma, which is easier to reach
 let mapleader = ","
 
-" Convenient keymap for NERDTree
-map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
-
-" Allow us to quickly enable list
-nmap <leader>l :set list!<CR>
+map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR> " Convenient keymap for NERDTree
+nmap <leader>l :set list!<CR>                           " Allow us to quickly enable list
+nmap <leader>j :IH<CR>                                  " Jump to file under cursor
+nmap <leader>J :A<CR>                                   " Jump to header file
 
 " Use 256 colors
 set t_Co=256
