@@ -20,6 +20,15 @@ map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR> " Convenient keymap for 
 nmap <leader>l :set list!<CR>                           " Allow us to quickly enable list
 nmap <leader>j :IH<CR>                                  " Jump to file under cursor
 nmap <leader>J :A<CR>                                   " Jump to header file
+nmap <leader>f :FufFile<CR>
+
+" Allow me to easily resize windows
+" reize horzontal split window
+nmap <C-Up> <C-W>-<C-W>-
+nmap <C-Down> <C-W>+<C-W>+
+" resize vertical split window
+nmap <C-Left> <C-W><<C-W><
+nmap <C-Right> <C-W>><C-W>>
 
 " Use 256 colors
 set t_Co=256
