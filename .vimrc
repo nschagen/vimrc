@@ -30,6 +30,10 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" Switch buffers
+map <C-Tab> :bnext<cr>
+map <C-S-Tab> :bprevious<cr>
+
 " Stop search highlighting
 " nmap <silent> ,/ :nohlsearch<CR>
 
