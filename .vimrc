@@ -30,10 +30,6 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-" Switch buffers
-map <C-Tab> :bnext<cr>
-map <C-S-Tab> :bprevious<cr>
-
 " Stop search highlighting
 " nmap <silent> ,/ :nohlsearch<CR>
 
@@ -52,6 +48,9 @@ let g:ctrlp_cmd = 'CtrlPMRU'
 
 " Ctrl+B will open the available buffers
 nmap <C-B> :CtrlPBuffer<CR>
+
+" Quickly cycle through buffers
+map <C-n> :bnext<CR>
 
 " Allow me to easily resize windows
 " reize horzontal split window
