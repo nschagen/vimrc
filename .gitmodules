@@ -19,3 +19,6 @@
 [submodule "bundle/L9"]
 	path = bundle/L9
 	url = https://github.com/vim-scripts/L9
+[submodule "bundle/localrc"]
+	path = bundle/localrc
+	url = https://github.com/vim-scripts/localrc.vim
