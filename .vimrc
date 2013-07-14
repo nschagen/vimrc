@@ -16,6 +16,27 @@ execute pathogen#infect()
 " Set leader to comma, which is easier to reach
 let mapleader = ","
 
+" Map ; to :
+nnoremap ; :
+
+" When wrapping is enabled, these allow you to easily move to the wrapped
+" part of the line without having
+" nnoremap j gj
+" nnoremap k gk
+
+" Easy window navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" Stop search highlighting
+" nmap <silent> ,/ :nohlsearch<CR>
+
+" Allow superuser save using w!!
+cmap w!! w !sudo tee % >/dev/null
+
+" Some handy utilities
 map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR> " Convenient keymap for NERDTree
 nmap <leader>l :set list!<CR>                           " Allow us to quickly enable list
 nmap <leader>j :IH<CR>                                  " Jump to file under cursor
