@@ -7,8 +7,8 @@ set tabstop=2        	  " Real tabs will be this long and will show up, because 
 set listchars=tab:▸\ ,eol:¬
 set nowrap              " we dont want any wrapping to happen
 set virtualedit=all     " TOTAL FREEDOM 4 my curZ0r
+set hidden              " Allows us to open new buffers while already working on something
 syntax on               " Syntax highlighting
-
 
 " Run Pathogen
 execute pathogen#infect() 
@@ -43,6 +43,12 @@ nmap <leader>j :IH<CR>                                  " Jump to file under cur
 nmap <leader>J :A<CR>                                   " Jump to header file
 nmap <leader>f :FufFile<CR>
 
+" Always use MRU when Ctrl-P is pressed
+let g:ctrlp_cmd = 'CtrlPMRU'
+
+" Ctrl+B will open the available buffers
+nmap <C-B> :CtrlPBuffer<CR>
+
 " Allow me to easily resize windows
 " reize horzontal split window
 nmap <C-Up> <C-W>-<C-W>-
@@ -54,9 +60,6 @@ nmap <C-Right> <C-W>><C-W>>
 " Use 256 colors
 set t_Co=256
 
-
-" Always use MRU
-let g:ctrlp_cmd = 'CtrlPMRU'
 
 " File type specific settings
 if has("autocmd")
