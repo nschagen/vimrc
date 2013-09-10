@@ -22,3 +22,9 @@
 [submodule "bundle/localrc"]
 	path = bundle/localrc
 	url = https://github.com/vim-scripts/localrc.vim
+[submodule "bundle/ack.vim"]
+	path = bundle/ack.vim
+	url = https://github.com/mileszs/ack.vim
+[submodule "bundle/vim-holmes"]
+	path = bundle/vim-holmes
+	url = https://github.com/dbakker/vim-holmes

@@ -30,6 +30,12 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" Let Ctrl+Q close the current buffer
+map <C-q> :bd<CR>
+
+" Run make by pressing F9
+map <F9> :make<CR>
+
 " Stop search highlighting
 " nmap <silent> ,/ :nohlsearch<CR>
 
@@ -42,6 +48,7 @@ nmap <leader>l :set list!<CR>                           " Allow us to quickly en
 nmap <leader>j :IH<CR>                                  " Jump to file under cursor
 nmap <leader>J :A<CR>                                   " Jump to header file
 nmap <leader>f :FufFile<CR>
+nmap <leader>h :HolmesL! 
 
 " Always use MRU when Ctrl-P is pressed
 let g:ctrlp_cmd = 'CtrlPMRU'
