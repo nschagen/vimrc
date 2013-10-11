@@ -49,6 +49,7 @@ nmap <leader>j :IH<CR>                                  " Jump to file under cur
 nmap <leader>J :A<CR>                                   " Jump to header file
 nmap <leader>f :FufFile<CR>
 nmap <leader>h :HolmesL! 
+nmap <leader>p :CtrlP<CR>
 
 " Always use MRU when Ctrl-P is pressed
 let g:ctrlp_cmd = 'CtrlPMRU'
