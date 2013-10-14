@@ -8,6 +8,7 @@ set listchars=tab:▸\ ,eol:¬
 set nowrap              " we dont want any wrapping to happen
 set virtualedit=all     " TOTAL FREEDOM 4 my curZ0r
 set hidden              " Allows us to open new buffers while already working on something
+set timeoutlen=250      " Timeout before vim interprets some keystrokes
 syntax on               " Syntax highlighting
 
 " Run Pathogen
