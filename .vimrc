@@ -9,6 +9,7 @@ set nowrap              " we dont want any wrapping to happen
 set virtualedit=all     " TOTAL FREEDOM 4 my curZ0r
 set hidden              " Allows us to open new buffers while already working on something
 set timeoutlen=250      " Timeout before vim interprets some keystrokes
+set backspace=2         " Backspace should work properly (http://vim.wikia.com/wiki/Erasing_previously_entered_characters_in_insert_mode)
 syntax on               " Syntax highlighting
 
 " Run Pathogen
@@ -54,6 +55,9 @@ nmap <leader>p :CtrlP<CR>
 
 " Always use MRU when Ctrl-P is pressed
 let g:ctrlp_cmd = 'CtrlPMRU'
+
+" Ignore some filetypes (to speed up ctrlp)
+set wildignore+=*.o,*.so,*.tar.*,*.zip
 
 " Ctrl+B will open the available buffers
 nmap <C-B> :CtrlPBuffer<CR>
