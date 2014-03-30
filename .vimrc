@@ -32,6 +32,9 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" Disable Q (Entering Ex mode)
+map Q <Nop>
+
 " Let Ctrl+Q close the current buffer
 map <C-q> :bd<CR>
 
