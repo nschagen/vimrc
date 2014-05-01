@@ -36,6 +36,9 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+noremap ]q :cn<CR>
+noremap [q :cp<CR>
+
 " Let Ctrl+Q close the current buffer
 " nnoremap <C-q> :bd<CR> DOESNT WORK
 
