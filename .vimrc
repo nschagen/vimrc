@@ -8,7 +8,7 @@ set listchars=tab:▸\ ,eol:¬
 set nowrap              " we dont want any wrapping to happen
 set virtualedit=all     " TOTAL FREEDOM 4 my curZ0r
 set hidden              " Allows us to open new buffers while already working on something
-set timeoutlen=250      " Timeout before vim interprets some keystrokes
+set timeoutlen=350      " Timeout before vim interprets some keystrokes
 set pastetoggle=<F2>    " F2 toggles paste mode
 set exrc                " enable per-directory .vimrc files
 set secure              " disable unsafe commands in local .vimrc files
@@ -36,6 +36,7 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" Navigate quickfix window
 noremap ]q :cn<CR>
 noremap [q :cp<CR>
 
@@ -56,15 +57,9 @@ map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR> " Convenient keymap for 
 nmap <leader>l :set list!<CR>                           " Allow us to quickly enable list
 nmap <leader>j :IH<CR>                                  " Jump to file under cursor
 nmap <leader>J :A<CR>                                   " Jump to header file
-nmap <leader>f :FufFile<CR> "DELETE THIS ONE??
-nmap <leader>h :HolmesL!    "DELETE THIS ONE??
-nmap <leader>p :CtrlP<CR>
 
 " Always use MRU when Ctrl-P is pressed
 let g:ctrlp_cmd = 'CtrlPMRU'
-
-" Ignore some filetypes (to speed up ctrlp)
-set wildignore+=*.o,*.so,*.tar.*,*.zip,*.pyc,*.class
 
 " Ctrl+B will open the available buffers
 nmap <C-B> :CtrlPBuffer<CR>
@@ -99,6 +94,10 @@ endif
 " bind F to grep word under cursor
 nnoremap F :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
+" Map CTRL J/K to next/prev result
+autocmd BufReadPost quickfix nnoremap <buffer> <C-j> :cnext<CR><C-w>p
+autocmd BufReadPost quickfix nnoremap <buffer> <C-k> :cprev<CR><C-w>p
+
 " File type specific settings
 if has("autocmd")
     filetype on
@@ -106,6 +105,9 @@ if has("autocmd")
     autocmd FileType python setlocal ts=4 sts=4 sw=4 noexpandtab
     autocmd FileType vim  setlocal ts=4 sts=4 sw=4 expandtab
 endif
+
+" Ignore some filetypes (to speed up ctrlp)
+set wildignore+=*.o,*.so,*.tar.*,*.zip,*.pyc,*.class
 
 " Set color scheme
 colorscheme holokai
