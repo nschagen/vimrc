@@ -28,3 +28,6 @@
 [submodule "bundle/vim-holmes"]
 	path = bundle/vim-holmes
 	url = https://github.com/dbakker/vim-holmes
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
