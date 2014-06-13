@@ -12,6 +12,7 @@ set timeoutlen=350      " Timeout before vim interprets some keystrokes
 set pastetoggle=<F2>    " F2 toggles paste mode
 set exrc                " enable per-directory .vimrc files
 set secure              " disable unsafe commands in local .vimrc files
+set backspace=indent,eol,start " makes backspace work
 syntax on               " Syntax highlighting
 
 let $BASH_ENV = "~/.bash_aliases"
