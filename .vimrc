@@ -50,8 +50,8 @@ map <F9> :make<CR>
 " Stop search highlighting
 " nmap <silent> ,/ :nohlsearch<CR>
 
-" Allow superuser save using w!!
-cmap w!! w !sudo tee % >/dev/null
+" Allow superuser save using W
+cmap W w !sudo tee >/dev/null %
     
 " Some handy utilities
 map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR> " Convenient keymap for NERDTree
