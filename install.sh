@@ -13,6 +13,10 @@ if [ -d ".git" ]; then
   # Initialize new submodules and merge any pulled changes into others
   git submodule update --init --merge
 
+  # when this does not work?
+  # git submodule init
+  # git submodule update
+
 	cp -r * ~/.vim 2>/dev/null # Copy and Ignore complaints about being unable to copy parts of .git directories
 	cp .vimrc ~/.vimrc 
 else
