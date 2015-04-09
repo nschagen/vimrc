@@ -79,6 +79,14 @@ cabbrev gc Gcommit
 " We want diffs to be vertical
 set diffopt=vertical
 
+" Shortcut for Tabularize
+" cabbrev tb Tabularize
+nmap <leader>t :Tabularize /
+nmap <leader>t= :Tabularize /=<CR>
+
+" Removes all non-initial whitespace
+cabbrev nows s/\(\S\+\)\s\+/\1/g<CR>
+
 " Allow me to easily resize windows
 " reize horzontal split window
 nmap <C-Up> <C-W>-<C-W>-
