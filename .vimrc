@@ -111,7 +111,7 @@ autocmd BufReadPost quickfix nnoremap <buffer> <C-k> :cprev<CR><C-w>p
 if has("autocmd")
     filetype on
     autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
-    autocmd FileType python setlocal ts=4 sts=4 sw=4 noexpandtab
+    autocmd FileType python setlocal ts=2 sts=2 sw=2 expandtab
     autocmd FileType vim  setlocal ts=4 sts=4 sw=4 expandtab
 endif
 
