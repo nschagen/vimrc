@@ -71,6 +71,14 @@ map <C-n> :bnext<CR>
 " Prevent entering Ex mode with capital Q
 noremap Q <Nop>
 
+" Fugitive shortcuts
+cabbrev gs Gstatus
+cabbrev gd Gdiff
+cabbrev gc Gcommit
+
+" We want diffs to be vertical
+set diffopt=vertical
+
 " Allow me to easily resize windows
 " reize horzontal split window
 nmap <C-Up> <C-W>-<C-W>-
