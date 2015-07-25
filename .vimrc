@@ -62,6 +62,9 @@ nmap <leader>J :A<CR>                                   " Jump to header file
 " Always use MRU when Ctrl-P is pressed
 let g:ctrlp_cmd = 'CtrlPMRU'
 
+" We should be able to search through ALL files below 'pwd'
+let g:ctrlp_max_files=0
+
 " Ctrl+B will open the available buffers
 nmap <C-B> :CtrlPBuffer<CR>
 
