@@ -48,13 +48,43 @@ map <F9> :make<CR>
 
 " Allow superuser save using W
 cmap W w !sudo tee >/dev/null %
-    
+
+" Script required for toggling quickfix list
+" =========================================
+function! GetBufferList()
+  redir =>buflist
+  silent! ls!
+  redir END
+  return buflist
+endfunction
+
+function! ToggleList(bufname, pfx)
+  let buflist = GetBufferList()
+  for bufnum in map(filter(split(buflist, '\n'), 'v:val =~ "'.a:bufname.'"'), 'str2nr(matchstr(v:val, "\\d\\+"))')
+    if bufwinnr(bufnum) != -1
+      exec(a:pfx.'close')
+      return
+    endif
+  endfor
+  if a:pfx == 'l' && len(getloclist(0)) == 0
+      echohl ErrorMsg
+      echo "Location List is Empty."
+      return
+  endif
+  let winnr = winnr()
+  exec(a:pfx.'open')
+  if winnr() != winnr
+    wincmd p
+  endif
+endfunction
+" =========================================
+
 " Some handy utilities
 map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR> " Convenient keymap for NERDTree
 nmap <leader>l :set list!<CR>                           " Allow us to quickly enable list
 nmap <leader>j :IH<CR>                                  " Jump to file under cursor
 nmap <leader>J :A<CR>                                   " Jump to header file
-nmap <leader>q :copen<CR>                               " Open quickfix window
+nmap <leader>q :call ToggleList("Quickfix List", 'c')<CR>                               " Open quickfix window
 
 " Always use MRU when Ctrl-P is pressed
 let g:ctrlp_cmd = 'CtrlPMRU'
