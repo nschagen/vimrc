@@ -37,10 +37,6 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-" Navigate quickfix window
-noremap ]q :cn<CR>
-noremap [q :cp<CR>
-
 " Let Ctrl+Q close the current buffer
 " nnoremap <C-q> :bd<CR> DOESNT WORK
 
@@ -58,6 +54,7 @@ map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR> " Convenient keymap for 
 nmap <leader>l :set list!<CR>                           " Allow us to quickly enable list
 nmap <leader>j :IH<CR>                                  " Jump to file under cursor
 nmap <leader>J :A<CR>                                   " Jump to header file
+nmap <leader>q :copen<CR>                               " Open quickfix window
 
 " Always use MRU when Ctrl-P is pressed
 let g:ctrlp_cmd = 'CtrlPMRU'
@@ -118,12 +115,18 @@ nnoremap F :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 autocmd BufReadPost quickfix nnoremap <buffer> <C-j> :cnext<CR><C-w>p
 autocmd BufReadPost quickfix nnoremap <buffer> <C-k> :cprev<CR><C-w>p
 
+" (old) Navigate quickfix window
+" noremap ]q :cn<CR>
+" noremap [q :cp<CR>
+
+
 " File type specific settings
 if has("autocmd")
     filetype on
     autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
     autocmd FileType python setlocal ts=2 sts=2 sw=2 expandtab
     autocmd FileType vim  setlocal ts=4 sts=4 sw=4 expandtab
+    autocmd FileType cpp  setlocal ts=4 sts=4 sw=4 expandtab
 endif
 
 " Ignore some filetypes (to speed up ctrlp)
