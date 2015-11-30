@@ -47,7 +47,7 @@ map <F9> :make<CR>
 " nmap <silent> ,/ :nohlsearch<CR>
 
 " Allow superuser save using W
-cmap W w !sudo tee >/dev/null %
+command! W w !sudo tee >/dev/null %
 
 " Script required for toggling quickfix list
 " =========================================
@@ -84,7 +84,8 @@ map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR> " Convenient keymap for 
 nmap <leader>l :set list!<CR>                           " Allow us to quickly enable list
 nmap <leader>j :IH<CR>                                  " Jump to file under cursor
 nmap <leader>J :A<CR>                                   " Jump to header file
-nmap <leader>q :call ToggleList("Quickfix List", 'c')<CR>                               " Open quickfix window
+nmap <leader>q :call ToggleList("Quickfix List", 'c')<CR> " Open quickfix window
+nmap <leader>o :call ToggleList("Location List", 'l')<CR> " Open location window
 
 " Always use MRU when Ctrl-P is pressed
 let g:ctrlp_cmd = 'CtrlPMRU'
@@ -140,6 +141,9 @@ endif
 
 " bind F to grep word under cursor
 nnoremap F :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+" Remove all trailing whitespaces in file
+command! Notr %s/\s\+$//e
 
 " Map CTRL J/K to next/prev result
 autocmd BufReadPost quickfix nnoremap <buffer> <C-j> :cnext<CR><C-w>p
