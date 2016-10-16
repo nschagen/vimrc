@@ -106,6 +106,7 @@ noremap Q <Nop>
 cabbrev gs Gstatus
 cabbrev gd Gdiff
 cabbrev gc Gcommit
+cabbrev gb Gblame
 
 " We want diffs to be vertical
 set diffopt=vertical
@@ -137,10 +138,14 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
+
+  " bind F to grep word under cursor
+  nnoremap F :grep! "<cword>"<CR>:cw<CR>
+else
+  " bind F to grep word under cursor
+  nnoremap F :grep! "<cword>" %<CR>:cw<CR>
 endif
 
-" bind F to grep word under cursor
-nnoremap F :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " Remove all trailing whitespaces in file
 command! Notr %s/\s\+$//e
@@ -172,3 +177,7 @@ colorscheme holokai
 " Required by vim-powerline
 set encoding=utf-8
 set laststatus=2
+
+" Quickly edit/reload this configuration file
+nnoremap gev :e ~/.vimrc<CR>
+nnoremap gsv :so ~/.vimrc<CR>
