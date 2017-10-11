@@ -11,7 +11,8 @@ if [ -d ".git" ]; then
 	fi
 
   # Initialize new submodules and merge any pulled changes into others
-  git submodule update --init --merge
+  # git submodule update --init --merge
+  git submodule update --init --checkout
 
   # when this does not work?
   # git submodule init
